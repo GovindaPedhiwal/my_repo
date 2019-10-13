@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+{% extends 'testapp/base.html' %}
+{% load staticfiles %}
+{% block main_block %}
+  <link rel="stylesheet" href="{% static 'css/main1.css' %}">
+  <style>
+  a#pwd {
+    font-family: 'Roboto', sans-serif;
+    font-size: 19px;
+    margin-top: 5px;
+  }
+  a#pwd {
+     color: #b26e63;
+  }
+  a#pwd:hover {
+      color: #c9ada1;
+    }
+  </style>
+{% endblock %}
+{% block child_block %}
+  <h3 style="background-color: #BE5869;padding: 7px 100px;" class="text-white">Login Form</h3>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-4 mx-auto my-5">
+              <form onsubmit="loginvalidation()" method="post">
+                  <input type="text" name="username" value="" placeholder="Username" id="username_id"><br><br>
+                  <input type="text" name="password" value="" placeholder="Password" id="password_id">
+                  <a href="/passwordchange" class="text-center d-block text-decoration-none" id="pwd">forgot password</a>
+                  <span id="message" style="visibility: hidden;">username and password is invalid</span>
+
+                     <div class="text-center">
+                      <input type="submit" name="" value="Login" class="btn mt-3 text-white" style="background-color: #d16666;">
+                   </div>
+                  {% csrf_token %}
+              </form>
+            </div>
+        </div>
+    </div>
+
+    <script src="{% static 'js/action_1.js' %}" charset="utf-8"></script>
+{% endblock %}

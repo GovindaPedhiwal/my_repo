@@ -1,0 +1,86 @@
+#banner {
+    background: #694b5e;
+  	background: linear-gradient(to left, #694b5e, #BE5869);
+  	min-height:  40vh;
+	  color:#FFF;
+    display: flex;
+    justify-content: center;
+}
+#banner {
+    padding: 30px;
+}
+#banner div>p {
+    padding-top: 10px;
+    font-family: 'Source Sans Pro', sans-serif;
+    text-indent: 30%;
+    font-size: 20px;
+    letter-spacing: 0.8px;
+}
+#banner div>a {
+    display: inline-block;
+    text-decoration: none;
+    color: white;
+    background-color: #da4453;
+    margin-top: 10px;
+    padding: 6px 10px;
+    cursor: pointer;
+    border-radius: 10px;
+}
+#banner div>a:hover {
+    background-color: #d62839;
+    opacity: 0.7;
+}
+main h2 {
+    font-family: 'Muli', sans-serif;
+    padding-top: 20px;
+}
+main img {
+    display: block;
+    margin: auto;
+    width: 300px;
+    padding: 20px 0px;
+}
+main p {
+    font-family: 'Be Vietnam', sans-serif;
+}
+
+#contact>div:nth-child(1) {
+    background-color: #BE5869;
+    color: white;
+}
+#contact i {
+    color: #BE5869;
+}
+input[type='text'],input[type='password'],textarea{
+    width: 100%;
+    padding: 6px 10px;
+    border: none;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+}
+input[type='password'] {
+  width: 100%;
+}
+input[type='text']:focus,input[type='password']:focus,textarea:focus {
+    outline: none;
+    border: 1px solid #ecebf3;
+}
+textarea {
+    width: 100%;
+    resize: none;
+    padding-left: 10px;
+    border-radius: 10px;
+}
+
+#submit {
+    background-color: #BE5869;
+    color: white;
+    padding: 6px 8px;
+    border: none;
+    margin-bottom: 10px;
+}
+#about>div:nth-child(1) {
+    background-color: #BE5869;
+    color: white;
+    padding: 5px;
+}

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+{% extends 'testapp/base.html' %}
+{% load staticfiles %}
+{% block main_block %}
+  <link rel="stylesheet" href="{% static 'css/dashboardstyle.css' %}">
+{% endblock %}
+{% block child_block %}
+    <h3 style="background-color: #BE5869;padding: 7px 100px;" class="text-white">Update Employee</h3>
+    <div class="container-fluid">
+      <div class="row">
+          <div class="col-10 col-md-3  ml-md-5 mx-auto">
+              <form method="post" class="d-block">
+              <label for="id_eid">Eid:</label>
+              <input type="text" name="eid" value="{{employee.eid}}" id="id_eid"><br>
+              <label for="id_first_name">First Name:</label>
+              <input type="text" name="first_name" value="{{employee.first_name}}" id="id_first_name"><br>
+              <label for="">Last Name:</label>
+              <input type="text" name="last_name" value="{{employee.last_name}}" id="id_last_name"><br>
+              <label for="">Salary</label>
+              <input type="text" name="salary" value="{{employee.salary}}" id="id_salary"><br>
+              Gender:<br>
+              {% if employee.gender == 'Male' %}
+                <input type="radio" name="gender" value="Male" checked>
+                Male
+              {% else %}
+                <input type="radio" name="gender" value="Male">
+                Male
+              {% endif %}
+              {% if employee.gender == 'Female' %}
+                <input type="radio" name="gender" value="Female" checked class="ml-2">
+                Female
+              {% else %}
+                <input type="radio" name="gender" value="Female" class="ml-2">
+                Female
+              {% endif %}
+              <br>
+              <label for="id_contactno">Contact No:</label>
+              <input type="text" name="contactno" value="{{employee.contactno}}" id="id_contactno"><br>
+              <label for="id_email">Email:</label>
+              <input type="text" name="email" value="{{employee.email}}" id="id_email"><br>
+              <label for="id_city">City:</label>
+              <input type="text" name="city" value="{{employee.city}}" id="id_city"><br>
+              <label for="id_country">Country:</label>
+              <input type="text" name="country" value="{{employee.country}}" id="id_country"><br>
+              <label for="id_pincode">Pincode:</label>
+              <input type="text" name="pincode" value="{{employee.pincode}}" id="id_pincode"><br>
+              <label for="id_address">Address:</label>
+              <input type="text" name="address" value="{{employee.address}}" id="id_address"><br>
+
+              <input type="submit" name="" value="Update Record">
+              <a href="/detailsemployee" style="background-color: #a8783e;color:white;padding:6px 12px;">Back</a>
+                  {% csrf_token %}
+              </form>
+            </div>
+          </div>
+        </div>
+{% endblock %}

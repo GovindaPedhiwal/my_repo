@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+{% extends 'testapp/base.html' %}
+{% load staticfiles %}
+{% block main_block %}
+  <link rel="stylesheet" href="{% static 'css/dashboardstyle.css' %}">
+  <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+  <script src="https://unpkg.com/gijgo@1.9.13/js/gijgo.min.js" type="text/javascript"></script>
+  <link href="https://unpkg.com/gijgo@1.9.13/css/gijgo.min.css" rel="stylesheet" type="text/css" />
+{% endblock %}
+{% block child_block %}
+<h3 style="background-color: #BE5869;padding: 7px 100px;" class="text-white">Update Attendance</h3>
+<div class="container-fluid">
+  <div class="row">
+      <div class="col-10 col-md-3  ml-md-5 mx-auto">
+          <form method="post" class="d-block">
+          {{form.as_p}}
+          <input type="submit" name="" value="Update Attendance">
+          <a href="/detailsattendance" style="background-color: #a8783e;color:white;padding:6px 12px;">Back</a>
+              {% csrf_token %}
+          </form>
+        </div>
+      </div>
+    </div>
+
+
+      <script>
+            $('#datepicker').datepicker();
+            $('#id_in_time').timepicker();
+            $('#id_out_time').timepicker();
+      </script>
+{% endblock %}

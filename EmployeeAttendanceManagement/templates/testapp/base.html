@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+{% load staticfiles %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="{% static 'css/base_main.css' %}">
+    <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Roboto+Slab&display=swap" rel="stylesheet">
+    {% block main_block %}
+    {% endblock %}
+    <link rel="stylesheet" href="{% static 'css/loading.css' %}">
+    <script src="{% static 'js/loading.js' %}" charset="utf-8" id="first"></script>
+</head>
+<body>
+  <div id="load" style="background: url('{% static 'images/Preloader_3.gif' %}') center no-repeat #fff"></div>
+  <div id="contents">
+      <nav class="navbar navbar-expand-lg navbar-light">
+          <div class="container-fluid">
+                  <a href="/" class="navbar-brand"><h1><span>E</span>mployee <span>A</span>ttendance <span>M</span>anagement</h1></a>
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+              <ul class="navbar-nav ml-auto">
+                  <i class="fa fa-home mt-2" style="color:#ccc;"></i>
+                  <li class="nav-item mr-4"><a href="/" class="nav-link py-0">home</a></li>
+                  {% if request.user.is_authenticated %}
+                  <i class="fa fa-users mt-2" style="color:#ccc;"></i>
+                  <li class="nav-item mr-4"><a href="#" class="nav-link py-0">Employee</a></li>
+                  <i class="fa fa-clock-o mt-2" style="color:#ccc;"></i>
+                  <li class="nav-item mr-4"><a href="#" class="nav-link py-0">Attendance</a></li>
+                  <i class="fa fa-tachometer mt-2" style="color:#ccc;"></i>
+                  <li class="nav-item mr-4"><a href="/dashboard" class="nav-link py-0">dashboard</a></li>
+                  <i class="fa fa-sign-out mt-2" style="color:#ccc;"></i>
+                  <li class="nav-item mr-4"><a href="/accounts/logout" class="nav-link py-0">logout</a></li>
+                  {% else %}
+
+                  <i class="fa fa-info-circle mt-2" style="color:#ccc;"></i>
+                  <li class="nav-item mr-4"><a href="/about" class="nav-link py-0">about</a></li>
+                  <i class="fa fa-address-book mt-2" style="color:#ccc;"></i>
+                  <li class="nav-item mr-4"><a href="/contactus" class="nav-link py-0">contact us</a></li>
+                  <i class="fa fa-sign-in mt-2" style="color:#ccc;"></i>
+                  <li class="nav-item mr-4"><a href="/accounts/login" class="nav-link py-0">login</a></li>
+                  {% endif %}
+              </ul>
+          </div>
+          </div>
+      </nav>
+
+      {% block child_block%}
+      {% endblock %}
+
+      <footer>
+          <p>Copyright &copy; 2019 All rights reserved</p>
+      </footer>
+    </div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.js"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+</body>
+</html>

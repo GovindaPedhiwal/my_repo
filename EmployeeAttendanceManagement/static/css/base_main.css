@@ -1,0 +1,23 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+nav h1 {
+    font-size: 24px;
+    padding-top: 4px;
+}
+nav h1>span {
+    color: #694b5e;
+    font-size: 26px;
+    font-family: 'Roboto Slab', serif;
+}
+ul>li>a {
+    font-size: 20px;
+}
+footer p{
+    background-color: #a23e48;
+    text-align: center;
+    color: white;
+    padding: 8px;
+}

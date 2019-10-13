@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+{% extends 'testapp/base.html' %}
+{% load staticfiles %}
+{% block main_block %}
+  <link rel="stylesheet" href="{% static 'css/dashboardstyle.css' %}">
+{% endblock %}
+
+{% block child_block %}
+      <h3 style="background-color: #BE5869;padding: 7px 100px;" class="text-white">Add Employee</h3>
+      <div class="container-fluid">
+        <div class="row">
+            <div class="col-10 col-md-3  ml-md-5 mx-auto">
+              <form method="post" class="d-block">
+                  <input type="text" name="eid" value="" placeholder="Id" id="id_eid"><br>
+                  <input type="text" name="first_name" value="" placeholder="First Name" id="id_first_name"><br>
+                  <input type="text" name="last_name" value="" placeholder="Last Name" id="id_last_name"><br>
+                  <input type="text" name="salary" value="" placeholder="Salary" id="id_salary"><br>
+                  <input type="radio" name="gender" value="Male" checked id="id_gender_0" class="my-2">
+                  Male
+                  <input type="radio" name="gender" value="Female" id="id_gender_1" class="ml-4 my-2">
+                  Female <br>
+                  <input type="text" name="contactno" value="" placeholder="Contact No" id="id_contactno"><br>
+                  <input type="text" name="email" value="" placeholder="Email" id="id_email"><br>
+                  <input type="text" name="country" value="" placeholder="Country" id="id_country"><br>
+                  <input type="text" name="city" value="" placeholder="City" id="id_city"><br>
+                  <input type="text" name="pincode" value="" placeholder="Pincode" id="id_pincode"><br>
+                  <input type="text" name="address" value="" placeholder="Address" id="id_address"><br>
+                  <input type="submit" name="" value="Submit">
+                  <a href="/dashboard" style="background-color: #a8783e;color:white;padding:6px 12px;margin-left: 5px;">Back</a>
+                  {% csrf_token %}
+
+                </form>
+              </div>
+          </div>
+      </div>
+
+{% endblock %}

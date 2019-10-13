@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+{% extends 'testapp/base.html' %}
+{% load staticfiles %}
+{% block main_block %}
+    <style>
+    ul#list li {
+      background-color: #686963;
+    }
+        li#item:hover {
+          background-color: #778472;
+        }
+    </style>
+{% endblock %}
+{% block child_block %}
+  <h3 style="background-color: #BE5869;padding: 7px 100px;" class="text-white">Dashboard</h3>
+  <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-4 col-10 mx-auto">
+              <ul class="list-unstyled" id="list">
+                <li id=item class="my-2 w-100"><a href="/addemployee" class="text-white text-center text-decoration-none d-block">Add Employee</a></li>
+                <li id=item class="my-2 w-100"><a href="/detailsemployee" class="text-white text-center text-decoration-none d-block">Details Employee</a></li>
+                <li id=item class="my-2 w-100"><a href="/addattendance" class="text-white text-center text-decoration-none d-block">Add Attendance</a></li>
+                <li id=item class="my-2 w-100"><a href="/detailsattendance" class="text-white text-center text-decoration-none d-block">Details Attendance</a></li>
+              </ul>
+            </div>
+        </div>
+</div>
+{% endblock %}

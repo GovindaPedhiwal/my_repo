@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+{% extends 'testapp/base.html' %}
+{% load staticfiles %}
+{% block main_block %}
+  <link rel="stylesheet" href="{% static 'css/dashboardstyle.css' %}">
+{% endblock %}
+{% block child_block %}
+    <h3 style="background-color: #BE5869;padding: 7px 100px;" class="text-white">Attendance List</h3>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col">
+              {% if attendance_list %}
+                <table>
+                  <thead>
+                    <th>S.No</th>
+                    <th>Employee Name</th>
+                    <th>Attendance Date</th>
+                    <th>In_time</th>
+                    <th>Out_time</th>
+                    <th>Description</th>
+                    <th>Actions</th>
+                  </thead>
+                  {% for attendance in attendance_list %}
+                  <tr>
+                    <td>{{counter.count}}</td>{{counter.increment}}
+                    <td>{{attendance.employee}}</td>
+                    <td>{{attendance.attendancedate}}</td>
+                    <td>{{attendance.in_time}}</td>
+                    <td>{{attendance.out_time}}</td>
+                    <td>{{attendance.description}}</td>
+                    <td><a href="/updateattendance/{{attendance.id}}">Update</a><a href="/deleteattendance/{{attendance.id}}" class="ml-2">Delete</a></td>
+                  </tr>
+                  {% endfor %}
+                </table>
+              {% else %}
+                <p>No Attendance Available</p>
+              {% endif %}
+            </div>
+        </div>
+    </div>
+{% endblock %}

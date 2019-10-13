@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+{% extends 'testapp/base.html' %}
+{% load staticfiles %}
+{% block main_block %}
+  <link rel="stylesheet" href="{% static 'css/main1.css' %}">
+{% endblock %}
+
+{% block child_block %}
+<div id="about">
+      <div>
+          <div class="container">
+                  <h2>About Employee Attendance Management</h2>
+          </div>
+      </div>
+      <div class="container">
+              <div class="row">
+                      <div class="col-8 text-justify mt-4">
+                          <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Tempore, explicabo nobis, dolor aut pariatur, facilis sit labore totam harum vel voluptatibus. Beatae sed explicabo repudiandae dolorem officia natus unde eaque! Lorem ipsum dolor sit amet consectetur adipisicing elit. Unde voluptatem recusandae tempora accusamus necessitatibus facere quidem exercitationem doloribus in quis. Accusantium aperiam inventore maxime facere iure ratione, incidunt tenetur suscipit. Minima ipsa adipisci dignissimos necessitatibus perferendis fugiat totam aliquid expedita, cupiditate veritatis dolor magni ipsum quod nostrum nam ratione doloremque tempore quo cumque dolores? Placeat obcaecati praesentium ab sit alias iusto officia, dolorem nisi iste reprehenderit esse odio a. Consequuntur consequatur minima, quidem reprehenderit repellat explicabo facere labore provident debitis doloremque a ratione laboriosam? Non quae magni incidunt. Quibusdam, alias ullam ipsa reprehenderit iure voluptas odio ipsum a aspernatur eos.
+                          </p>
+                          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatem repellat expedita doloremque similique adipisci harum sequi eligendi explicabo dolorem, saepe qui, odit ex quidem vitae dicta officiis voluptas culpa? Sunt reiciendis, sapiente porro est non, ullam eligendi tenetur, assumenda possimus culpa asperiores similique obcaecati rem pariatur. Fugiat ipsum quisquam facere.</p>
+                      </div>
+                  </div>
+      </div>
+  </div>
+{% endblock %}

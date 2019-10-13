@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+{% extends 'testapp/base.html' %}
+{% load staticfiles %}
+{% block main_block %}
+  <link rel="stylesheet" href="{% static 'css/main1.css' %}">
+  <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Muli&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Be+Vietnam&display=swap" rel="stylesheet">
+
+{% endblock %}
+{% block child_block %}
+<div class="container-fluid" id="banner">
+    <div class="container">
+        <div class="row">
+                <div class="col-md-8  mx-auto">
+                    <h2>Employee Attendance Management</h2>
+                        <p>This application is used to store and manage the attendance of Employee!</p>
+                        <a href="">know more</a>
+                </div>
+                <div class="col-md-4">
+                  <img src="{% static 'images\AttendanceMattersWordmark_English_-1.png' %}" alt="" style="width: 240px;height:210px;background-color:white;">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <main>
+    <div class="container-fluid wrapper">
+        <div class="row">
+                <div class="col-md-8 mx-md-auto">
+                    <h2 class="text-center">Employee Attendance Management</h2>
+                    <img src="{% static 'images/Employee-Time-Punch-Clock.jpg' %}" alt="">
+                    <p class="text-justify">Lorem ipsum dolor sit amet consectetur adipisicing elit. Architecto dolorem impedit eos libero molestias odit, ipsam, ex facere fugit cumque voluptatibus minus dicta ut nemo accusantium perferendis harum delectus sint amet molestiae ullam veniam error? Labore laudantium nam quae iure doloribus cum fugit maxime blanditiis aliquam? Lorem ipsum dolor, sit amet consectetur adipisicing elit. Dolores, distinctio fuga delectus ullam, ratione quibusdam doloribus sit ipsa culpa optio aperiam omnis, ab quod accusantium hic! Itaque ad debitis ducimus repellat aspernatur quos, pariatur quibusdam atque consequatur deleniti consequuntur delectus eveniet, nisi sint fuga molestias quisquam aliquid magni beatae placeat laudantium. Asperiores natus distinctio rem saepe inventore accusamus nulla. Cum illum est dignissimos nihil praesentium soluta nam quo numquam deserunt autem? Consectetur asperiores unde est quod recusandae.</p>
+                    <p style="text-indent: 30%;" class="text-justify">Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas quos iure quisquam maiores nobis maxime ipsam ut, tempore saepe voluptatibus? Accusamus soluta culpa harum repellat, tenetur possimus eaque nostrum, voluptate atque autem delectus non obcaecati blanditiis doloribus. Mollitia placeat possimus totam qui at quia natus enim aliquid dolores, eos itaque reiciendis error quas inventore sequi pariatur nulla vel atque, aliquam illo quam necessitatibus? Asperiores rem eos ea quia incidunt quas provident voluptatem. Blanditiis quis eos veritatis tempore sunt corporis omnis repellendus, esse porro, sequi optio necessitatibus, assumenda soluta distinctio natus molestiae repudiandae exercitationem! Architecto, et ducimus perferendis amet velit aspernatur?</p>
+                </div>
+            </div>
+    </div>
+
+{% endblock %}

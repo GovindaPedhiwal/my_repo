@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+{% extends 'testapp/base.html' %}
+{% load staticfiles %}
+{% block main_block %}
+  <link rel="stylesheet" href="{% static 'css/dashboardstyle.css' %}">
+{% endblock %}
+{% block child_block %}
+    <h3 style="background-color: #BE5869;padding: 7px 100px;" class="text-white">Employees List</h3>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col">
+              {% if emp_list %}
+                <table>
+                  <thead>
+                    <th>S.No</th>
+                    <th>Employee Name</th>
+                    <th>Salary</th>
+                    <th>Gender</th>
+                    <th>Email</th>
+                    <th>City</th>
+                    <th>Country</th>
+                    <th>Action</th>
+                  </thead>
+                  {% for employee in emp_list %}
+                  <tr>
+                    <td>{{counter.count}}</td>{{counter.increment}}
+                    <td>{{employee.first_name}}{{' '}}{{employee.last_name}}</td>
+                    <td>{{employee.salary}}</td>
+                    <td>{{employee.gender}}</td>
+                    <td>{{employee.email}}</td>
+                    <td>{{employee.city}}</td>
+                    <td>{{employee.country}}</td>
+                    <td><a href="/updateemployee/{{employee.eid}}">Update</a><a href="/deleteemployee/{{employee.eid}}" class="ml-2">Delete</a></td>
+                  </tr>
+                  {% endfor %}
+                </table>
+              {% else %}
+                <p>No Employee Available</p>
+              {% endif %}
+            </div>
+        </div>
+    </div>
+
+
+{% endblock %}
